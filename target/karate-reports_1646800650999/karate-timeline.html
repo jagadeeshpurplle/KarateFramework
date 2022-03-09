@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[1:7]","start":1646800644563,"end":1646800644930,"title":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[1:7] 10:07:24.563-10:07:24.930 to test the get endpoint with  json data"},{"id":2,"group":1,"content":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[2:12]","start":1646800644936,"end":1646800644949,"title":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[2:12] 10:07:24.936-10:07:24.949 to test the get endpoint with  json data"},{"id":3,"group":1,"content":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[3:19]","start":1646800644954,"end":1646800644978,"title":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[3:19] 10:07:24.954-10:07:24.978 to test the get endpoint with json data"},{"id":4,"group":1,"content":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[4:51]","start":1646800644983,"end":1646800645056,"title":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[4:51] 10:07:24.983-10:07:25.056 to test the get endpoint with xml data"},{"id":5,"group":1,"content":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[5:83]","start":1646800645061,"end":1646800645074,"title":"src\/test\/java\/com\/api\/automation\/getrequest\/getRequest[5:83] 10:07:25.061-10:07:25.074 to test the get endpoint with xml data"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
